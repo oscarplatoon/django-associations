@@ -2,13 +2,17 @@ from django.test import TestCase
 from .models import *
 import redgreenunittest as unittest
 
+
 class AssociationTestCase(TestCase):
     def setUp(self):
         self.actor = Actor()
+        print(f"Actor created: {self.actor}")
         self.actor.save()
         self.movie = Movie()
+        print(f"Move created: {self.movie}")
         self.movie.save()
-        self.role  = Role(movie=self.movie, actor=self.actor)
+        self.role = Role(movie=self.movie, actor=self.actor)
+        print(f"role created: {self.role.movie} and {self.role.actor}")
         self.role.save()
 
     def test_01_roles_movie(self):

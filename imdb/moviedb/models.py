@@ -8,7 +8,9 @@ class Actor(models.Model):
 class Movie(models.Model):
 
     actors = models.ManyToManyField(
-        Actor, through='Role', related_name='movies')
+        Actor,
+        through='Role',
+        related_name='movies')
     # through specifies what the intermediate table is
 
 
