@@ -2,15 +2,20 @@ from django.db import models
 
 
 class Actor(models.Model):
-    pass
+    movies = models.ManyToManyField(
+        'Movie',
+        through='Role',
+        related_name='actors'
+    )
 
 
 class Movie(models.Model):
-
-    actors = models.ManyToManyField(
-        Actor,
-        through='Role',
-        related_name='movies')
+    # Either way works.
+    pass
+    # actors = models.ManyToManyField(
+    #     Actor,
+    #     through='Role',
+    #     related_name='movies')
     # through specifies what the intermediate table is
 
 
