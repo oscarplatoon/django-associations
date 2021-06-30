@@ -43,6 +43,7 @@ Run `createdb medium`. After you set up your models run `python3 manage.py makem
 
 ### Association Methods
 ```ruby
+#
 post.user # the author of the post
 post.comments
 
